@@ -1,0 +1,158 @@
+// src/app/components/drink-preference/drink-preference.component.scss
+
+.drink-preference {
+  padding: 4rem 1rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.remind-visit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  position: relative;
+  z-index: 1;
+
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.preference-form {
+  background: var(--light-beige);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.drink-option {
+  position: relative;
+}
+
+.drink-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  &:checked + .drink-label {
+    border-color: var(--primary);
+    background-color: rgba(93, 64, 55, 0.05);
+
+    .drink-icon {
+      transform: scale(1.1);
+      color: var(--primary);
+    }
+
+    .drink-name {
+      color: var(--primary);
+      font-weight: 500;
+    }
+  }
+}
+
+.drink-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0.5rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.drink-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.drink-name {
+  font-size: 1rem;
+  color: var(--text-light);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(93, 64, 55, 0.3);
+  }
+
+  .btn-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(165, 214, 167, 0.2);
+  border-radius: 8px;
+  color: var(--primary);
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+
+  .success-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Анімації */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

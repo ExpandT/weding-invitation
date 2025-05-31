@@ -1,0 +1,94 @@
+// src/app/components/footer/footer.component.scss
+@import '_variables';
+
+// footer.component.scss
+.footer {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.telegram-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0088cc;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+
+
+  &:hover {
+    background-color: transparent;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.credits {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 2rem;
+  display: block;
+  position: relative;
+  padding-top: 1.5rem;
+
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1.5rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+
+    &:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
+    }
+  }
+}

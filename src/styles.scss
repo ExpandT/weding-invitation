@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+}
+
+:root {
+  // Основні кольори
+  --primary: #5D4037;  // Глибокий коричневий (замість earth)
+  --secondary: #8D6E63;  // Світліший коричневий
+  --accent: #D7CCC8;  // Дуже світлий бежевий (замість almond)
+
+  // Додаткові кольори
+  --soft-green: #A5D6A7;  // М'який зелений (замість moss/sage)
+  --light-beige: #EFEBE9;  // Фоновий кольор
+  --gold: #FFD700;  // Акцентний золотий
+
+  // Текст
+  --text-dark: #3E2723;  // Темно-коричневий для тексту
+  --text-light: #5D4037;  // Світліший коричневий
+
+  // Тіні
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.earth-text { color: var(--earth); }
+.moss-text { color: var(--moss); }
+.sand-text { color: var(--sand); }
+.almond-text { color: var(--almond); }
+.sage-text { color: var(--sage); }
+
+.earth-bg { background-color: var(--earth); }
+.moss-bg { background-color: var(--moss); }
+.sand-bg { background-color: var(--sand); }
+.almond-bg { background-color: var(--almond); }
+.sage-bg { background-color: var(--sage); }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: var(--light-beige);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

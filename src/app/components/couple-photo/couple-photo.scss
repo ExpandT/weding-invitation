@@ -1,0 +1,24 @@
+// src/app/components/couple-photo/couple-photo.component.scss
+@import '_variables';
+
+.photo-section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: var(--light-beige);
+}
+
+.couple-photo {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-height: 600px;
+  object-fit: cover;
+  border: 10px solid white;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg);
+  }
+}

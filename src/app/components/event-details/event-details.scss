@@ -1,0 +1,156 @@
+// src/app/components/event-details/event-details.component.scss
+
+.event-details {
+  padding: 4rem 1rem;
+  background-color: var(--light-beige);
+  position: relative;
+  overflow: hidden;
+
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: var(--primary);
+  position: relative;
+  z-index: 1;
+
+  .title-decor {
+    display: inline-block;
+    margin-right: 10px;
+    transform: rotate(-15deg);
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.event-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+
+  &.ceremony-card::after {
+    background: linear-gradient(to right, var(--soft-green), var(--gold));
+  }
+
+  &.celebration-card::after {
+    background: linear-gradient(to right, var(--gold), var(--secondary));
+  }
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--accent);
+}
+
+.event-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.event__name {
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.event-body {
+  margin-bottom: 1.5rem;
+}
+
+.event-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+
+  .icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+}
+
+.event__address,
+.event__place,
+.event__time {
+  margin: 0;
+  color: var(--text-light);
+}
+
+.event__time strong {
+  color: var(--primary);
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  margin-top: 1rem;
+
+  .map-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
+  }
+}
+
+/* Анімації */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-10px) rotate(-15deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,50 @@
+<!-- src/app/components/drink-preference/drink-preference.component.html -->
+<section class="drink-preference">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">🍷</span> Ваші напої
+    </h2>
+
+    <div class="form-container">
+      <form [formGroup]="drinkForm" (ngSubmit)="onSubmit()" class="preference-form">
+        <div class="drinks-grid">
+          @for (drink of drinks; track drink) {
+            <div class="drink-option">
+              <input
+                type="checkbox"
+                [id]="drink.key"
+                [formControlName]="drink.key"
+                class="drink-checkbox"
+              >
+              <label [for]="drink.key" class="drink-label">
+                <div class="drink-icon">
+                  @switch (drink.key) {
+                    @case ('cognac') { 🥃 }
+                    @case ('vodka') { 🫗 }
+                    @case ('wine') { 🍷 }
+                    @case ('champagne') { 🥂 }
+                  }
+                </div>
+                <span class="drink-name">{{ drink.label }}</span>
+              </label>
+            </div>
+          }
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span class="btn-icon">💾</span>
+          <span class="btn-text">Зберегти вибір</span>
+        </button>
+
+        @if (success) {
+          <div class="success-message">
+            <span class="success-icon">✅</span>
+            Дякуємо! Ваші вподобання збережено.
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+
+  <p class="remind-visit">Прохання повідомити про Вашу присутність до 10 липня  2025 року</p>
+</section>

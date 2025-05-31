@@ -1,0 +1,93 @@
+<!-- src/app/components/main-invitation/main-invitation.component.html -->
+<section class="invitation">
+  <div class="container">
+    <div class="invitation-card">
+      <div class="floral-decor top-left">🌿</div>
+      <div class="floral-decor bottom-right">🌿</div>
+
+      <h2 class="invitation__greeting">
+        <span class="handwriting">Дорогі</span>
+        <span class="guest-name">{{ guestName }}</span>
+        <span class="exclamation">!</span>
+      </h2>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-icon">💍</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <p class="invitation__text">
+        З великою радістю та любов'ю<br>
+        запрошуємо Вас розділити з нами<br>
+        щасливу мить нашого весілля
+      </p>
+
+      <!-- calendar.component.html -->
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <h3 class="calendar-title">Серпень 2025</h3>
+          <div class="calendar-weekdays">
+            <div class="weekday">Пн</div>
+            <div class="weekday">Вт</div>
+            <div class="weekday">Ср</div>
+            <div class="weekday">Чт</div>
+            <div class="weekday">Пт</div>
+            <div class="weekday">Сб</div>
+            <div class="weekday">Нд</div>
+          </div>
+        </div>
+
+        <div class="calendar-grid">
+          <!-- Перший рядок -->
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day">1</div>
+          <div class="calendar-day">2</div>
+          <div class="calendar-day">3</div>
+
+          <!-- Другий рядок -->
+          <div class="calendar-day">4</div>
+          <div class="calendar-day">5</div>
+          <div class="calendar-day">6</div>
+          <div class="calendar-day">7</div>
+          <div class="calendar-day wedding-day">8             <div class="wedding-marker">♥</div>
+          </div>
+          <div class="calendar-day weekend">9</div>
+          <div class="calendar-day weekend">10</div>
+
+          <!-- Третій рядок -->
+          <div class="calendar-day">11</div>
+          <div class="calendar-day">12</div>
+          <div class="calendar-day">13</div>
+          <div class="calendar-day">14</div>
+          <div class="calendar-day">15</div>
+          <div class="calendar-day weekend">16</div>
+          <div class="calendar-day weekend">17</div>
+
+          <!-- Четвертий рядок -->
+          <div class="calendar-day">18</div>
+          <div class="calendar-day">19</div>
+          <div class="calendar-day">20</div>
+          <div class="calendar-day">21</div>
+          <div class="calendar-day">22</div>
+          <div class="calendar-day weekend">23</div>
+          <div class="calendar-day weekend">24</div>
+
+          <!-- П'ятий рядок -->
+          <div class="calendar-day">25</div>
+          <div class="calendar-day">26</div>
+          <div class="calendar-day">27</div>
+          <div class="calendar-day">28</div>
+          <div class="calendar-day">
+            29
+          </div>
+          <div class="calendar-day weekend">30</div>
+          <div class="calendar-day weekend">31</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

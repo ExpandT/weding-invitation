@@ -1,0 +1,21 @@
+:root {
+  --earth: #95714F;
+  --moss: #8C916C;
+  --sand: #C7AF94;
+  --almond: #EADED0;
+  --sage: #ACB087;
+}
+
+.earth-text { color: var(--earth); }
+.moss-text { color: var(--moss); }
+.sand-text { color: var(--sand); }
+.almond-text { color: var(--almond); }
+.sage-text { color: var(--sage); }
+
+.earth-bg { background-color: var(--earth); }
+.moss-bg { background-color: var(--moss); }
+.sand-bg { background-color: var(--sand); }
+.almond-bg { background-color: var(--almond); }
+.sage-bg { background-color: var(--sage); }
+
+.sage-border { border: 1px solid var(--sage); }
