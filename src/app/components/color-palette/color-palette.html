@@ -1,0 +1,22 @@
+<!-- src/app/components/color-palette/color-palette.component.html -->
+<section class="color-palette-section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">🎨</span> Наша весільна палітра
+    </h2>
+
+    <div class="palette-container">
+
+      @for (color of weddingColors; track color) {
+        <div class="color-card">
+          <div class="color-sample" [style.background]="color.code"></div>
+          <div class="color-info">
+            <span class="color-name">{{ color.name }}</span>
+            <span class="color-code">{{ color.code }}</span>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</section>

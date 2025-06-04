@@ -1,0 +1,76 @@
+<!-- admin.component.html -->
+<div class="admin-container">
+  <!-- Форма логіна -->
+  <div *ngIf="!isAuthenticated" class="login-section">
+    <div class="login-card">
+      <h2>Доступ до даних гостей</h2>
+      <div class="form-group">
+        <input type="password" [(ngModel)]="password" placeholder="Введіть пароль">
+      </div>
+      <button (click)="login()" class="login-btn">Увійти</button>
+    </div>
+  </div>
+
+  <!-- Панель адміна -->
+  <div *ngIf="isAuthenticated" class="admin-panel">
+    <h2>Дані гостей</h2>
+
+    <div class="stats-container">
+      <div class="stat-card confirmed">
+        <h3>Підтвердили</h3>
+        <p>{{ getConfirmedGuests() }}</p>
+      </div>
+      <div class="stat-card declined">
+        <h3>Відмовили</h3>
+        <p>{{ getDeclinedGuests() }}</p>
+      </div>
+    </div>
+
+    <div class="guests-list">
+      <div *ngFor="let group of guestGroups; let i = index" class="guest-group">
+        <h3 class="group-title">Група {{ group.guests[0].id  }}</h3>
+
+        <div class="group-drinks">
+          <h4>Загальні напої для групи:</h4>
+          <div class="drinks-tags">
+            <span *ngIf="group.drinks.champagne" class="drink-tag">Шампанське</span>
+            <span *ngIf="group.drinks.cognac" class="drink-tag">Коньяк</span>
+            <span *ngIf="group.drinks.vodka" class="drink-tag">Горілка</span>
+            <span *ngIf="group.drinks.wine" class="drink-tag">Вино</span>
+            <span *ngIf="!group.drinks.champagne && !group.drinks.cognac && !group.drinks.vodka && !group.drinks.wine"
+                  class="drink-tag none">Не вказано</span>
+          </div>
+        </div>
+
+        <div class="guests-table">
+          <table>
+            <thead>
+            <tr>
+              <th>Ім'я</th>
+              <th>Статус</th>
+              <th>Коньяк</th>
+              <th>Горілка</th>
+              <th>Вино</th>
+              <th>Шампанське</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let guest of group.guests">
+              <td>{{ guest.name }}</td>
+              <td>
+                  <span [class]="getStatusClass(guest.attending)">
+                    {{ getStatusText(guest.attending) }}
+                  </span>
+              </td>
+              <td><span >{{group.drinks.cognac ? '✓' : '-'}}</span></td>
+              <td><span>{{group.drinks.vodka ? '✓' : '-'}}</span></td>
+              <td><span>{{group.drinks.wine ? '✓' : '-'}}</span></td>
+              <td><span>{{group.drinks.champagne ? '✓' : '-'}}</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

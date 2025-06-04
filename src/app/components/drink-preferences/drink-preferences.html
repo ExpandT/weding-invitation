@@ -1,6 +1,38 @@
 <!-- src/app/components/drink-preference/drink-preference.component.html -->
 <section class="drink-preference">
   <div class="container">
+    <!-- Блок підтвердження присутності -->
+    <div class="attendance-section fade-in">
+      <h2 class="section-title">
+        <span class="icon">💌</span> Підтвердіть вашу присутність
+      </h2>
+
+      <div class="guests-confirmation">
+        @for (guest of guests; track guest) {
+          <div class="guest-row">
+            <span class="guest-name">{{ guest.name }}</span>
+            <div class="response-options">
+              <label class="response-option">
+                <input type="radio"
+                       [name]="'attendance-' + guest.name"
+                       [value]="true"
+                       [(ngModel)]="guest.attending">
+                <span class="response-label yes">Так</span>
+              </label>
+              <label class="response-option">
+                <input type="radio"
+                       [name]="'attendance-' + guest.name"
+                       [value]="false"
+                       [(ngModel)]="guest.attending">
+                <span class="response-label no">Ні</span>
+              </label>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Блок вибору напоїв -->
     <h2 class="section-title">
       <span class="icon">🍷</span> Ваші напої
     </h2>
@@ -15,7 +47,7 @@
                 [id]="drink.key"
                 [formControlName]="drink.key"
                 class="drink-checkbox"
-              >
+                [disabled]="!allGuestsAttending()">
               <label [for]="drink.key" class="drink-label">
                 <div class="drink-icon">
                   @switch (drink.key) {
@@ -31,7 +63,7 @@
           }
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn" [disabled]="!allGuestsResponded()">
           <span class="btn-icon">💾</span>
           <span class="btn-text">Зберегти вибір</span>
         </button>
@@ -44,7 +76,10 @@
         }
       </form>
     </div>
-  </div>
 
-  <p class="remind-visit">Прохання повідомити про Вашу присутність до 10 липня  2025 року</p>
+    <p class="remind-visit">
+      <span class="remind-icon">⏳</span>
+      Прохання повідомити про вашу присутність до 10 липня 2025 року
+    </p>
+  </div>
 </section>

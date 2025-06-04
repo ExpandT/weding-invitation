@@ -1,0 +1,186 @@
+// admin.component.scss
+.admin-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #5D4037;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+}
+
+.login-btn {
+  background: #8D6E63;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #6D4E53;
+  }
+}
+
+.admin-panel {
+  h2 {
+    color: #5D4037;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.stat-card {
+  flex: 1;
+  max-width: 200px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 2rem;
+    margin: 0.5rem 0 0;
+    font-weight: bold;
+  }
+
+  &.confirmed {
+    background: #A5D6A7;
+  }
+
+  &.declined {
+    background: #EF9A9A;
+  }
+}
+
+.guests-list {
+  margin-top: 2rem;
+}
+
+.guest-group {
+  margin-bottom: 3rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.group-title {
+  color: #5D4037;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #EFEBE9;
+}
+
+.group-drinks {
+  margin: 1rem 0;
+
+  h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #5D4037;
+    font-weight: normal;
+  }
+}
+
+.drinks-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.drink-tag {
+  background: #EFEBE9;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #5D4037;
+
+  &.none {
+    background: #f8d7da;
+    color: #721c24;
+  }
+}
+
+.guests-table {
+  overflow-x: auto;
+  margin-top: 1rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    background: #EFEBE9;
+    color: #5D4037;
+    font-weight: 500;
+  }
+
+  tr:hover {
+    background: #F5F5F5;
+  }
+
+  span.active {
+    color: #8D6E63;
+    font-weight: bold;
+  }
+
+  .status-confirmed {
+    color: #2E7D32;
+  }
+
+  .status-declined {
+    color: #C62828;
+  }
+}

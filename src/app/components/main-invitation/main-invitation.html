@@ -6,7 +6,7 @@
       <div class="floral-decor bottom-right">🌿</div>
 
       <h2 class="invitation__greeting">
-        <span class="handwriting">Дорогі</span>
+        <span class="handwriting">{{ guestName.includes('та') ? 'Дорогі' : 'Дорогий / Дорога' }}</span>
         <span class="guest-name">{{ guestName }}</span>
         <span class="exclamation">!</span>
       </h2>

@@ -8,6 +8,7 @@ import {DrinkPreferences} from './components/drink-preferences/drink-preferences
 import {Timeline} from './components/timeline/timeline';
 import {Footer} from './components/footer/footer';
 import {GuestService} from './services/guest';
+import {ColorPalette} from './components/color-palette/color-palette';
 
 export interface Guest {
   id: string;
@@ -24,7 +25,7 @@ export interface Guest {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, MainInvitation, CouplePhoto, EventDetails, DrinkPreferences, Timeline, Footer],
+  imports: [RouterOutlet, Header, MainInvitation, CouplePhoto, EventDetails, DrinkPreferences, Timeline, Footer, ColorPalette],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -37,10 +38,4 @@ export class App {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const guestId = params['guestId'];
-      this.guestService.getGuestById(guestId).subscribe(guest => {
-        this.guest = guest;
-      });
-    });
   }}
