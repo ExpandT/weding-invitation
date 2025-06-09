@@ -24,15 +24,17 @@ export class Admin implements OnInit {
   ];
 
    ngOnInit() {
-     console.log(this.guestService.getGuests().subscribe( (res:any) => this.guestData = res));
+     this.guestService.getGuests().subscribe( (res:any) => {
+       this.guestData = res;
+       console.log(res);
+     });
    }
   get guestGroups(): any[] {
-    return this.guestData.filter((group: any) => group !== null) as any[];
+    return Object.values(this.guestData).filter(group => group !== null) as any[];
   }
 
   get allGuests(): any[] {
-    return this.guestGroups.flatMap(group => group.guests);
-  }
+    return this.guestGroups.flatMap(group => group.guests || []);  }
 
   login() {
     if (this.password === this.mockPassword) {
