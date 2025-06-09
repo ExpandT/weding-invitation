@@ -24,7 +24,7 @@ export class MainInvitation implements OnInit {
     const numericId = +id;
 
     this.guestService.getGuestById(numericId).subscribe(guest => {
-      this.guestName = guest.name.split(',').join(' та');
+      this.guestName = guest.name;
     });
   }
 
