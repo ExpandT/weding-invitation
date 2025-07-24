@@ -59,7 +59,8 @@ export class GuestService {
     { id: 45, name: "Маша, Саша" },
     { id: 46, name: "Анжела" },
     { id: 47, name: "Олена, Валерій" },
-     { id: 48, name: "Коля" }
+     { id: 48, name: "Коля" },
+     { id: 49, name: "Олександр, Юлія" },
    ];
 
   constructor(private db: AngularFireDatabase) {}
